@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Olympic Medals Table
 
-## Available Scripts
+This is a coding challenge for Bó to create a simple interface by which the user can enter a country name and the
+number of medals (gold, silver, and bronze) won at the last Olympics, to be displayed in a table.
 
-In the project directory, you can run:
+## The Task
 
-### `yarn start`
+* Countries to be added to a table, along with the TOTAL number of medals the country won during the last Olympic Games
+* Rows to be sorted in descending order of medals won, either automatically or manually by the user
+* (optional) Add counts for each type of medal (Gold, Silver, Bronze) and make the countries order by Gold first,
+  Silver next and Bronze thereafter
+* (optional) Add country flag icons/images to the country names
+* Allow editing and/or deleting of countries from the list
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to use
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This is the standard bit about doing `npm install`, `npm start`, and `npm build` (or the `yarn` alternatives).
+No need, really, to elaborate.
 
-### `yarn test`
+I've hosted the app on https://olympic-medals-table.surge.sh/ if you want to kick the tyres and take the app for a spin.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## What I might do differently
 
-### `yarn build`
+* Testing, testing, testing!  Normally I would have thorough test coverage, perhaps take a TDD (test-first) approach,
+  but do to time constraints I just churned out the code.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* I haven't added loading and error states. I really should. Perhaps if I have time before the face-to-face interview...
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* I might implement flag icons. I have the urls to flag images, but don't really have the time...
