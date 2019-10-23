@@ -52,7 +52,7 @@ class AutosuggestInput extends Component {
 
     const inputProps = {
       type: 'search',
-      ariaLabel: 'Country',
+      'aria-label': 'Country',
       placeholder: 'Enter the name of a country',
       value,
       onChange: this.onChange,
