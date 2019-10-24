@@ -1,9 +1,10 @@
 # Olympic Medals Table
 
-This is a coding challenge for Bó to create a simple interface by which the user can enter a country name and the
-number of medals (gold, silver, and bronze) won at the last Olympics, to be displayed in a table.
+This app is the result of a technical coding challenge to test my React skills for a job opportunity.
 
 ## The Task
+
+Create a simple interface by which the user can enter a country name and the number of medals (gold, silver, and bronze) won at the last Olympics.
 
 * Countries to be added to a table, along with the TOTAL number of medals the country won during the last Olympic Games
 * Rows to be sorted in descending order of medals won, either automatically or manually by the user
