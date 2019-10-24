@@ -52,6 +52,11 @@ const Abbrev = styled.abbr`
   }
 `;
 
+const Flag = styled.img`
+  width: 1.5rem;
+  margin-left: 0.5rem;
+`;
+
 const EditButton = styled(Link)`
   display: inline-block;
   padding: 0.25rem;
@@ -117,10 +122,13 @@ const MedalsTable = ({countries}) => {
       </THead>
       <TBody>
         {countries.map(country => {
-          const {name, gold, silver, bronze, total} = country;
+          const {name, flag, gold, silver, bronze, total} = country;
           return (
             <TRow key={name}>
-              <TCell>{name}</TCell>
+              <TCell>
+                {name}
+                <Flag src={flag} alt="" aria-hidden="true"/>
+              </TCell>
               <TCell>{gold}</TCell>
               <TCell>{silver}</TCell>
               <TCell>{bronze}</TCell>

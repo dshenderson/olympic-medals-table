@@ -24,6 +24,4 @@ I've hosted the app on https://olympic-medals-table.surge.sh/ if you want to kic
 * Testing, testing, testing!  Normally I would have thorough test coverage, perhaps take a TDD (test-first) approach,
   but due to time constraints I just churned out the code.
 
-* I haven't added loading and error states. I really should. Perhaps if I have time before the face-to-face interview...
-
-* I might implement flag icons. I have the urls to flag images, but don't really have the time...
+* I haven't added loading and error states. I really should.

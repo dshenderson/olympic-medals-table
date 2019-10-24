@@ -4,31 +4,22 @@ import './Autosuggest.css';
 
 class AutosuggestInput extends Component {
   state = {
-    countries: [],
     value: '',
     suggestions: []
-  }
-
-  componentDidMount() {
-    fetch('https://restcountries.eu/rest/v2/all?fields=flag;name')
-      .then(r => r.json())
-      .then(countries => {
-        this.setState({countries});
-      });
   }
 
   getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : this.state.countries.filter(country =>
-      country.name.toLowerCase().slice(0, inputLength) === inputValue
-    );
+    return inputLength === 0 ? [] : this.props.countries.filter(country => {
+      return country.toLowerCase().slice(0, inputLength) === inputValue
+    });
   }
 
-  getSuggestionValue = suggestion => suggestion.name;
+  getSuggestionValue = suggestion => suggestion;
 
-  renderSuggestion = suggestion => suggestion.name;
+  renderSuggestion = suggestion => suggestion;
 
   onChange = (event, {newValue}) => {
     this.props.onChange(newValue);

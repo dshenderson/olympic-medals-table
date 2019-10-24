@@ -107,7 +107,17 @@ class AddCountry extends Component {
     onSubmit: PropTypes.func.isRequired
   }
 
+  state = {
+    country: '',
+    gold: 0,
+    silver: 0,
+    bronze: 0,
+    toHome: false,
+    editing: false
+  }
+
   componentDidMount() {
+    // when editing existing country entry
     if (this.props.location.state) {
       const {name, gold, silver, bronze} = this.props.location.state.country;
       this.setState({
@@ -118,15 +128,6 @@ class AddCountry extends Component {
         editing: true
       })
     }
-  }
-
-  state = {
-    country: '',
-    gold: 0,
-    silver: 0,
-    bronze: 0,
-    toHome: false,
-    editing: false
   }
 
   processForm = e => {
@@ -169,7 +170,11 @@ class AddCountry extends Component {
 
         <Form onSubmit={this.processForm}>
           {!this.state.editing && (
-            <AutosuggestInput onChange={this.handleCountry} value={this.state.country}/>
+            <AutosuggestInput
+              countries={this.props.countries}
+              onChange={this.handleCountry}
+              value={this.state.country}
+            />
           )}
 
           <Fieldset>

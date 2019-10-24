@@ -44,14 +44,25 @@ const MainHeading = styled.h1`
 
 class App extends Component {
   state = {
-    countries: []
+    allCountries: [],
+    selectedCountries: []
+  }
+
+  componentDidMount() {
+    fetch('https://restcountries.eu/rest/v2/all?fields=flag;name')
+      .then(r => r.json())
+      .then(allCountries => {
+        this.setState({allCountries});
+      });
   }
 
   addCountry = country => {
+    const flag = this.state.allCountries.find(c => c.name === country.name).flag;
+
     this.setState(currentState => ({
-      countries: [
-        ...currentState.countries.filter(c => c.name !== country.name),
-        country
+      selectedCountries: [
+        ...currentState.selectedCountries.filter(c => c.name !== country.name),
+        {...country, flag}
       ].sort((a, b) => {
         // first sort by gold medals
         if (a.gold > b.gold) {
@@ -92,7 +103,7 @@ class App extends Component {
 
   deleteCountry = name => {
     this.setState(currentState => ({
-      countries: currentState.countries.filter(country => country.name !== name)
+      selectedCountries: currentState.selectedCountries.filter(country => country.name !== name)
     }));
   }
 
@@ -104,11 +115,16 @@ class App extends Component {
           <Route exact path="/" render={() => (
             <>
               <Button to="/edit">Add a country</Button>
-              <MedalsTable countries={this.state.countries}/>
+              <MedalsTable countries={this.state.selectedCountries}/>
             </>
           )}/>
           <Route path="/edit" render={(props) => (
-            <AddCountry onDelete={this.deleteCountry} onSubmit={this.addCountry} {...props}/>
+            <AddCountry
+              onDelete={this.deleteCountry}
+              onSubmit={this.addCountry}
+              countries={this.state.allCountries.map(country => country.name)}
+              {...props}
+            />
           )}/>
         </Switch>
       </AppWrapper>
